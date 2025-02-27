@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Excuse Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Ultimate Excuse Generator</h1>
+        <p id="excuse">Press the button to generate an excuse!</p>
+        <button onclick="generateExcuse()">Generate Excuse</button>
+    </div>
+
+    <script>
+        function generateExcuse() {
+            const subjects = ["My phone", "My neighbor", "My shoes", "My internet", "My laptop", "My coffee machine", "My sibling", "The elevator", "The subway", "My bike", "The electricity", "The water supply", "My breakfast", "My boss", "My alarm app", "My smartwatch", "My homework", "My printer", "My glasses", "My door", "My car", "The bus", "My alarm", "My pet", "The traffic"];
+            const verbs = ["stopped working", "disappeared", "ran out of battery", "wouldn’t start", "got stuck", "got hacked", "crashed", "locked me out", "refused to cooperate", "went missing", "broke unexpectedly", "ran late", "didn’t load", "overheated", "had an issue", "wouldn’t connect", "spilled everywhere", "got jammed", "started glitching", "caused a mess", "broke down", "got delayed", "didn't go off", "needed attention", "was horrible"];
+            const reasons = ["because of a software update", "due to a sudden power surge", "thanks to my cat knocking things over", "because I hit snooze too many times", "due to an unexpected bug", "because the WiFi went down", "thanks to a wrong address", "because of a missing cable", "due to my dog chewing on it", "because I got distracted", "thanks to a last-minute emergency", "because I was locked out", "due to my friend’s bad advice", "thanks to a mysterious error", "because my battery died unexpectedly", "due to a scheduling mix-up", "because I forgot to charge it", "thanks to my printer refusing to print", "because of a last-minute software crash", "due to an unexplained malfunction", "because of an accident", "due to bad weather", "thanks to unexpected maintenance", "because I lost track of time", "because of a power outage"];
+            
+            const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+            const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
+            const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+            
+            const excuse = `${randomSubject} ${randomVerb} ${randomReason}.`;
+            document.getElementById("excuse").innerText = excuse;
+        }
+    </script>
+</body>
+</html>
